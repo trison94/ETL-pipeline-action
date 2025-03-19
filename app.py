@@ -3,7 +3,7 @@ from datetime import datetime
 
 def log_message(message):
     """Writes validation findings to a file."""
-    with open('validation_log.txt', 'a') as file:
+    with open('data-validation-pipeline\validation_log.txt', 'a') as file:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         file.write(f"{timestamp} - {message}\n")
 

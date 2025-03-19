@@ -14,11 +14,6 @@ jobs:
 
     steps:
 
-      - name: Debug Branch and Files
-        run: |
-          git branch
-          ls -la
-
       - name: Checkout Code
         uses: actions/checkout@v2
 
