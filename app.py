@@ -25,7 +25,7 @@ def validate_no_missing_values(df):
     return True
 
 def main():
-    # Load the data
+    # Load the data into the DataFrame
     try:
         df = pd.read_csv('data.csv')
         log_message("Data loaded successfully.")
