@@ -1,7 +1,6 @@
-Name,Age,Email
-John Doe,30,john.doe@example.com
-Jane Smith,25,jane.smith@example.com
-Alice Johnson,35,alice.johnson@example.com
-Invalid User,,invalid.email@example.com
-Missing Age,NaN,missing.age@example.com
-Wrong Type,thirty,wrong.type@example.com
+id,name,age
+1,John Doe,28
+a,Jane Doe,22
+3,Invalid Age,abc
+4,,30
+5,Valid User,257
