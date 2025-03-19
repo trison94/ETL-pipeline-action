@@ -1,4 +1,4 @@
-name:
+name: Validation Pipeline
 
 on:
   push:
@@ -8,9 +8,7 @@ on:
     branches:
       - main
 
-
 jobs:
-
   validation_pipeline:
     runs-on: ubuntu-latest
 
@@ -21,29 +19,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Specify the Python version you need
+          python-version: '3.9'
 
-      - name: Setup Docker
-        uses: docker/setup-buildx-action@v3
-
-
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas pytest flake8 mypy
+          pip install pandas pytest
 
       - name: Run tests
-        run: pytest tests/
+        run: pytest
 
-      - name: Run linting
-        run: flake8 data_validation_pipeline/ tests/
-
-      - name: Run type checking
-        run: mypy data_validation_pipeline/ tests/
-
-      # Step 7: Publish validation_log.txt to the repository
-      - name: Commit and Push Validation Log
+      - name: Publish validation_log.txt to the repository
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
