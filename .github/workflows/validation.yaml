@@ -27,11 +27,10 @@ jobs:
           pip install pandas
 
       - name: Run validation script
-        run: app.py
+        run: python app.py
 
       - name: Publish validation_log.txt to the repository
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           BRANCH: 'main'
-          
